@@ -86,10 +86,12 @@ void loop() {
     float temperature = dht.readTemperature();
     Serial.print("Temperature: ");
     Serial.println(temperature);
+    
     // Print pin statuses
     Serial.print("Button: ");
     Serial.println(digitalRead(BTN_PIN) == LOW ? "PRESSED" : "RELEASED");
-   // Print LED statuses
+    
+    // Print LED statuses
     Serial.print("LED1: ");
     Serial.print(digitalRead(LED1_PIN) == HIGH ? "ON" : "OFF");
     Serial.print(", LED2: ");
@@ -98,7 +100,8 @@ void loop() {
     Serial.print(digitalRead(LED3_PIN) == HIGH ? "ON" : "OFF");
     Serial.print(", LED4: ");
     Serial.println(digitalRead(LED4_PIN) == HIGH ? "ON" : "OFF");
-      // Turn off all LEDs initially
+      
+      // Turn off all LEDs
     digitalWrite(LED1_PIN, LOW);
     digitalWrite(LED2_PIN, LOW);
     digitalWrite(LED3_PIN, LOW);
@@ -134,10 +137,6 @@ void loop() {
 
   // Update the button previous state
   buttonPrevState = digitalRead(BTN_PIN);
-
-  // Your main code logic goes here (if required).
-  // The button interrupt handler will take care of the LED state changes.
-  // This loop can be empty if you don't have any other code to execute continuously.
 }
  
 // Written in CSV File
